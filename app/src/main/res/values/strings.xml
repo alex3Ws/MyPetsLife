@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MyPetsLife</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="forgetpassword">¿Olvidaste tu contraseña?</string>
+    <string name="repeatPasword">Repetir Contraseña</string>
+    <string name="Login">Iniciar Sesión</string>
+    <string name="SingUp">Registrarse</string>
+    <string name="notRegistered">¿Aún no tienes una cuenta? Regístrate.</string>
+    <string name="haveAccount">Ya tengo una cuenta</string>
+    <string name="loginGoogle">Entrar con Google</string>
+    <string name="loginFacebook">Entrar con Facebook</string>
+
+
+</resources>
