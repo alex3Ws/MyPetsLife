@@ -1,15 +1,22 @@
 <resources>
     <string name="app_name">MyPetsLife</string>
+
+    <!-- Login Screen -->
     <string name="email">Email</string>
     <string name="password">Contraseña</string>
     <string name="forgetpassword">¿Olvidaste tu contraseña?</string>
-    <string name="repeatPasword">Repetir Contraseña</string>
     <string name="Login">Iniciar Sesión</string>
-    <string name="SingUp">Registrarse</string>
     <string name="notRegistered">¿Aún no tienes una cuenta? Regístrate.</string>
-    <string name="haveAccount">Ya tengo una cuenta</string>
     <string name="loginGoogle">Entrar con Google</string>
     <string name="loginFacebook">Entrar con Facebook</string>
+
+    <!-- Sing Up Screen -->
+    <string name="SingUp">Registrarse</string>
+    <string name="haveAccount">Ya tengo una cuenta</string>
+    <string name="repeatPasword">Repetir Contraseña</string>
+
+    <!-- Select/Add Pet Screen -->
+    <string name="Pets">Mascotas</string>
 
 
 </resources>
