@@ -9,12 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPetsLife">
-        <activity android:name=".SelectOrAddPetActivity"></activity>
-        <activity android:name=".SingUpActivity" />
+        <activity android:name=".SelectOrAddPetActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            />
+        <activity android:name=".SingUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            />
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait">
-            --no se puede poner en horizontal
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait"
+            >  <!--no se puede poner en horizontal-->
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
