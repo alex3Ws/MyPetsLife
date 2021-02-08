@@ -37,7 +37,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2_izq"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <!--<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,10 +46,10 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline2_dcha"
         app:layout_constraintStart_toStartOf="@+id/guideline2_izq"
         app:layout_constraintTop_toBottomOf="@+id/tvPets"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintVertical_bias="0.37" />-->
 
 
-    <!-- <ImageView
+     <ImageView
          android:id="@+id/imageView2"
          android:layout_width="183dp"
          android:layout_height="233dp"
@@ -58,9 +58,9 @@
          app:layout_constraintEnd_toEndOf="parent"
          app:layout_constraintHorizontal_bias="0.502"
          app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/textView"
+         app:layout_constraintTop_toBottomOf="@+id/tvPets"
          app:layout_constraintVertical_bias="0.706"
-         app:srcCompat="@drawable/icono_add_pet" /> -->
+         app:srcCompat="@drawable/icono_add_pet" />
 
 
  </androidx.constraintlayout.widget.ConstraintLayout>

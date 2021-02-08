@@ -11,7 +11,7 @@
     <string name="loginFacebook">Entrar con Facebook</string>
 
     <!-- Sing Up Screen -->
-    <string name="SingUp">Registrarse</string>
+    <string name="SignIn">Registrarse</string>
     <string name="haveAccount">Ya tengo una cuenta</string>
     <string name="repeatPasword">Repetir Contraseña</string>
 
