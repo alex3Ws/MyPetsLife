@@ -165,7 +165,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_singup"
+        android:id="@+id/btn_SignIn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_registrarse_background"
