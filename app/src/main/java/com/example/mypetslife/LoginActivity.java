@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-//TODO: editText cuando se le hacen click quitar el hint y volverlo a poner al desfocusearlo
+//TODO: editText cuando se le hacen click quitar el hint y volverlo a poner al desfocusearlo. Validaciones de campos al clickar botones
 
 public class LoginActivity extends AppCompatActivity {
 
