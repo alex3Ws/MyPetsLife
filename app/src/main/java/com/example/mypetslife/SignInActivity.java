@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+//TODO: editText cuando se le hacen click quitar el hint y volverlo a poner al desfocusearlo. Validaciones de campos al clickar botones
+
 public class SignInActivity extends AppCompatActivity {
 
     EditText etEmail,etPassword,etRepeatPassword;
@@ -22,6 +24,7 @@ public class SignInActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         etRepeatPassword = findViewById(R.id.etRepeatPassword);
         btn_SignIn = findViewById(R.id.btn_SignIn);
+
         btn_SignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
