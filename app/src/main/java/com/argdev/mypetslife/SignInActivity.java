@@ -1,4 +1,4 @@
-package com.example.mypetslife;
+package com.argdev.mypetslife;
 
 import androidx.appcompat.app.AppCompatActivity;
 
