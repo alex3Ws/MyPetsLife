@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "9535304512",
+    "project_id": "mypetslife-app",
+    "storage_bucket": "mypetslife-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9535304512:android:0b923f0877b959397a80a5",
+        "android_client_info": {
+          "package_name": "com.argdev.mypetslife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9535304512-okqsf2lv69jd8855nm9m1le0l04jgkb7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.argdev.mypetslife",
+            "certificate_hash": "926a83bb9f442fe038264d9ac46b7e7650b857b4"
+          }
+        },
+        {
+          "client_id": "9535304512-hecss60t0tflj6oftptc4qe8b9m92c8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeI6FHeYAcAyCMqeJJT0slRsMIAva05bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9535304512-hecss60t0tflj6oftptc4qe8b9m92c8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
