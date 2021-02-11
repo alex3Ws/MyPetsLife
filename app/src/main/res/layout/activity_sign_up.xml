@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity"
+    tools:context=".SignUpActivity"
     android:background="@drawable/gradient_background_login">
 
 
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etEmailSignIn"
+        android:id="@+id/etEmailSignUp"
 
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
         app:layout_constraintEnd_toStartOf="@id/guideline_dcha"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline_izq"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailSignIn" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmailSignUp" />
 
     <EditText
         android:id="@+id/etRepeatPassword"
@@ -93,10 +93,10 @@
 
 
     <Button
-        android:id="@+id/btn_SignIn"
+        android:id="@+id/btn_SignUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/SignIn"
+        android:text="@string/SignUp"
         android:textAllCaps="false"
         android:background="@drawable/btn_background_login"
         android:textColor="@color/login_form_details_medium"
@@ -109,7 +109,7 @@
 
 
     <View
-        android:id="@+id/SignIn_separator"
+        android:id="@+id/SignUp_separator"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginBottom="50dp"

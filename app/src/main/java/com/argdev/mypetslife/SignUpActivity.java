@@ -25,10 +25,10 @@ import java.util.regex.Pattern;
 
 //TODO: editText cuando se le hacen click quitar el hint y volverlo a poner al desfocusearlo.
 
-public class SignInActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     EditText etEmail,etPassword,etRepeatPassword;
-    Button btn_SignIn,btn_haveAccount;
+    Button btn_SignUp,btn_haveAccount;
 
     private String email,password,repeatpassword;
     FirebaseAuth mAuth;
@@ -39,15 +39,15 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        etEmail = findViewById(R.id.etEmailSignIn);
+        etEmail = findViewById(R.id.etEmailSignUp);
         etPassword = findViewById(R.id.etPassword);
         etRepeatPassword = findViewById(R.id.etRepeatPassword);
-        btn_SignIn = findViewById(R.id.btn_SignIn);
+        btn_SignUp = findViewById(R.id.btn_SignUp);
 
 
 
         //Al pulsar el boton registrarse
-        btn_SignIn.setOnClickListener(new View.OnClickListener() {
+        btn_SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

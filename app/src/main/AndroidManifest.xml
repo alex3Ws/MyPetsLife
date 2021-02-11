@@ -12,7 +12,7 @@
         <activity android:name="com.argdev.mypetslife.SelectOrAddPetActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             />
-        <activity android:name="com.argdev.mypetslife.SignInActivity"
+        <activity android:name="com.argdev.mypetslife.SignUpActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             />
