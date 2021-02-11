@@ -16,8 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,8 +30,8 @@ public class SignUpActivity extends AppCompatActivity {
     Button btn_SignUp,btn_haveAccount;
 
     private String email,password,repeatpassword;
-    FirebaseAuth mAuth;
-    DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
                 repeatpassword = etRepeatPassword.getText().toString();
 
                 mAuth = FirebaseAuth.getInstance();
-                mDatabase = FirebaseDatabase.getInstance().getReference();
+                db = FirebaseFirestore.getInstance();
 
                 //VALIDAR DE CAMPOS
                 if(email.isEmpty() || password.isEmpty() || repeatpassword.isEmpty()){
@@ -112,11 +111,10 @@ public class SignUpActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
 
                     Map<String,Object> map = new HashMap<>();
-                    map.put("User",email);
-                    map.put("Mascota",0);
+                    map.put("IDUser",mAuth.getCurrentUser().getUid());
+                    map.put("Mascota",false);
 
-                    String id = mAuth.getCurrentUser().getUid();
-                    mDatabase.child("Users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    db.collection("Users").document(email).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
 
@@ -125,8 +123,8 @@ public class SignUpActivity extends AppCompatActivity {
                                 startActivity(intentAddSelectPet);
                             }
                             else{
+                                mAuth.getCurrentUser().delete();
                                 Toast.makeText(getApplicationContext(),"Se ha producido un error. Por favor, vuelva a intentarlo en unos minutos", Toast.LENGTH_SHORT).show();
-                                //TODO: loguearse con el usuario creado y borrarlo. En firebase solo puedes borrar el usuario logueado
                             }
 
                         }
@@ -145,13 +143,14 @@ public class SignUpActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"El email introducido ya esta en uso", Toast.LENGTH_SHORT).show();
                             break;
                         case "ERROR_USER_DISABLED":
-                            Toast.makeText(getApplicationContext(),"El email introducido ha sido baneado de la aplicacion por el administrador", Toast.LENGTH_SHORT).show();
+                            //TODO:MEJORAR ESTA RESPUESTA DERIVANDO AL CORREO DE INCIDENCIAS
+                            Toast.makeText(getApplicationContext(),"El email introducido ha sido inhabilitado", Toast.LENGTH_SHORT).show();
                             break;
                         default:
                             Toast.makeText(getApplicationContext(),"Se ha producido un error, por favor, vuelva a intentarlo en unos minutos", Toast.LENGTH_SHORT).show();
                             break;
                     }
-                    //hacer switch case para los posibles errores, y asi dar una respuesta al usuario y meter todos los toast en strings para traducción a otros idiomas
+                    //TODO: meter todos los toast en strings para traducción a otros idiomas
 
                 }
             }
