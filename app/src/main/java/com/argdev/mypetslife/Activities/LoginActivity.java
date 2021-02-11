@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 FirebaseUser AuthUser = mAuth.getCurrentUser();
 
-
+                                //TODO: RECUPERAR INFO DE USUARIO DE LA BBDD
 
                                 Intent intentAddSelectPet = new Intent(v.getContext(), SelectOrAddPetActivity.class);
                                 startActivity(intentAddSelectPet);
