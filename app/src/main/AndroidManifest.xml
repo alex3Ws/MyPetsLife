@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPetsLife">
-        <activity android:name="com.argdev.mypetslife.SelectOrAddPetActivity"
+        <activity android:name="com.argdev.mypetslife.Activities.SelectOrAddPetActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             />
-        <activity android:name="com.argdev.mypetslife.SignUpActivity"
+        <activity android:name="com.argdev.mypetslife.Activities.SignUpActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             />
         <activity
-            android:name="com.argdev.mypetslife.LoginActivity"
+            android:name="com.argdev.mypetslife.Activities.LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait"
             >  <!--no se puede poner en horizontal-->

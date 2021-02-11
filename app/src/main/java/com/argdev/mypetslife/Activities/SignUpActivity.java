@@ -1,4 +1,4 @@
-package com.argdev.mypetslife;
+package com.argdev.mypetslife.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.argdev.mypetslife.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -68,6 +69,10 @@ public class SignUpActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"El email introducido no tiene un formato valido", Toast.LENGTH_SHORT).show();
 
                 }
+                else if(email.length()>60){
+
+                    Toast.makeText(getApplicationContext(),"El email introducido no puede superar los 60 caracteres", Toast.LENGTH_SHORT).show();
+                }
                 else if(password.length() < 6 || password.length() > 16){
 
                     Toast.makeText(getApplicationContext(),"La contraseña debe tener entre 6 y 16 caracteres", Toast.LENGTH_SHORT).show();
@@ -119,7 +124,7 @@ public class SignUpActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task2) {
 
                             if(task2.isSuccessful()){
-                                Intent intentAddSelectPet = new Intent(v.getContext(),SelectOrAddPetActivity.class);
+                                Intent intentAddSelectPet = new Intent(v.getContext(), SelectOrAddPetActivity.class);
                                 startActivity(intentAddSelectPet);
                             }
                             else{
