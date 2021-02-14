@@ -1,12 +1,19 @@
 package com.argdev.mypetslife.Entities;
 
-public class User {
+import java.io.Serializable;
+import java.util.List;
+
+public class User implements Serializable {
 
     private String IDUser;
     //Mascota: 1-Si tiene mascota 0-Si no
     private Boolean Mascota;
     //Mascotas - Informacion de cada una de las mascotas
     private Mascotas Mascotas;
+
+    public User() {
+
+    }
 
     public User(String IDUser, Boolean Mascota, Mascotas Mascotas) {
         this.IDUser = IDUser;
@@ -38,4 +45,12 @@ public class User {
     public void setMascotas(Mascotas Mascotas) {
         this.Mascotas = Mascotas;
     }
+
+    public String toStringF(){
+
+        String prueba = IDUser+" "+Mascota+" "+ Mascotas.getPrueba()+" "+ Mascotas.getPrueba2();
+
+        return prueba;
+    }
+
 }
