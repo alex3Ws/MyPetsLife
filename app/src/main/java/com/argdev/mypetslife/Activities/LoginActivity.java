@@ -81,51 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
 
-                                db.collection("Users").document("one")
-                                        .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                        if (task.isSuccessful()) {
-
-                                            DocumentSnapshot document = task.getResult();
-                                            user.setIDUser(document.getString("IDUser"));
-                                            user.setMascota(document.getBoolean("Mascota"));
-
-
-
-                                        }
-                                    }
-                                });
-
-                                db.collection("Users").document("one").collection("Mascotas")
-                                        .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
-                                        if (task.isSuccessful()) {
-
-                                            for (QueryDocumentSnapshot document : task.getResult()) {
-
-                                                mascota = document.toObject(Mascotas.class);
-
-                                                user.setMascotas(mascota);
-
-
-                                            }
-
-
-                                            Intent intentAddSelectPet = new Intent(v.getContext(), SelectOrAddPetActivity.class);
-                                            intentAddSelectPet.putExtra("UserObject",user);
-                                            startActivity(intentAddSelectPet);
-                                        }
-
-                                    }
-                                });
-
-
-
-
-
+                                getUserData(v);
 
                             } else {
                                 String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
@@ -188,6 +144,59 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void getUserData(View view){
+
+        db.collection("Users").document("one")
+                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+
+                    DocumentSnapshot document = task.getResult();
+                    user.setIDUser(document.getString("IDUser"));
+                    user.setMascota(document.getBoolean("Mascota"));
+
+                    getMascotasData(view);
+                }
+            }
+        });
+    }
+
+
+    private void getMascotasData(View view){
+
+        db.collection("Users").document("one").collection("Mascotas")
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                if (task.isSuccessful()) {
+
+                    List<Mascotas> listaMascotas = new ArrayList<Mascotas>();
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+
+                        mascota = document.toObject(Mascotas.class);
+                        mascota.setNombreMascota(document.getId());
+                        listaMascotas.add(mascota);
+                    }
+
+                    user.setMascotas(listaMascotas);
+
+                    intentOnSucces(view);
+                }
+
+            }
+        });
+
+    }
+
+
+    private void intentOnSucces(View view){
+        Intent intentAddSelectPet = new Intent(view.getContext(), SelectOrAddPetActivity.class);
+        intentAddSelectPet.putExtra("UserObject",user);
+        startActivity(intentAddSelectPet);
     }
 
 

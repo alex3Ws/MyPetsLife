@@ -1,35 +1,89 @@
 package com.argdev.mypetslife.Entities;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class Mascotas  implements Serializable {
-    private String Prueba;
 
-    private String Prueba2;
+    private String NombreMascota;
+    private String Especie;
+    private String Raza;
+    private String Subraza1;
+    private String Subraza2;
+    private String FechaNacimiento;
+    private String UrlFoto;
 
     public Mascotas(){
 
     }
 
-    public Mascotas(String prueba, String prueba2) {
-        Prueba = prueba;
-        Prueba2 = prueba2;
+    public Mascotas(String nombreMascota, String especie, String raza, String subraza1, String subraza2, String fechaNacimiento, String urlFoto) {
+        NombreMascota = nombreMascota;
+        Especie = especie;
+        Raza = raza;
+        Subraza1 = subraza1;
+        Subraza2 = subraza2;
+        FechaNacimiento = fechaNacimiento;
+        UrlFoto = urlFoto;
     }
 
-    public String getPrueba() {
-        return Prueba;
+    public String getNombreMascota() {
+        return NombreMascota;
     }
 
-    public void setPrueba(String prueba) {
-        Prueba = prueba;
+    public void setNombreMascota(String nombreMascota) {
+        NombreMascota = nombreMascota;
     }
 
-    public String getPrueba2() {
-        return Prueba2;
+    public String getEspecie() {
+        return Especie;
     }
 
-    public void setPrueba2(String prueba2) {
-        Prueba2 = prueba2;
+    public void setEspecie(String especie) {
+        Especie = especie;
     }
+
+    public String getRaza() {
+        return Raza;
+    }
+
+    public void setRaza(String raza) {
+        Raza = raza;
+    }
+
+    public String getSubraza1() {
+        return Subraza1;
+    }
+
+    public void setSubraza1(String subraza1) {
+        Subraza1 = subraza1;
+    }
+
+    public String getSubraza2() {
+        return Subraza2;
+    }
+
+    public void setSubraza2(String subraza2) {
+        Subraza2 = subraza2;
+    }
+
+    public String getFechaNacimiento() {
+        return FechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        FechaNacimiento = fechaNacimiento;
+    }
+
+    public String getUrlFoto() {
+        return UrlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        UrlFoto = urlFoto;
+    }
+
 }
