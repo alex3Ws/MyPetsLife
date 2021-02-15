@@ -23,44 +23,29 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="24dp" />
 
-    <TextView
-        android:id="@+id/tvPets"
-        android:layout_width="wrap_content"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPets"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_marginTop="72dp"
-
-        android:text="@string/Pets"
-        android:textColor="@color/login_form_details"
-        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2_dcha"
         app:layout_constraintStart_toStartOf="@+id/guideline2_izq"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--<androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
+    <!--<ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="183dp"
+        android:layout_height="233dp"
+        android:layout_marginBottom="238dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2_dcha"
-        app:layout_constraintStart_toStartOf="@+id/guideline2_izq"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPets"
-        app:layout_constraintVertical_bias="0.37" />-->
-
-
-     <ImageView
-         android:id="@+id/imageView2"
-         android:layout_width="183dp"
-         android:layout_height="233dp"
-         android:layout_marginBottom="238dp"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintHorizontal_bias="0.502"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/tvPets"
-         app:layout_constraintVertical_bias="0.706"
-         app:srcCompat="@drawable/icono_add_pet" />
+        app:layout_constraintVertical_bias="0.706"
+        app:srcCompat="@drawable/icono_add_pet" />-->
 
 
  </androidx.constraintlayout.widget.ConstraintLayout>
