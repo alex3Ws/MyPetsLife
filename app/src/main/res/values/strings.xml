@@ -18,5 +18,16 @@
     <!-- Select/Add Pet Screen -->
     <string name="Pets">Mascotas</string>
 
+    <!-- Create Pet Screen -->
+    <string name="Name">Nombre</string>
+
+    <string-array name="species">
+        <item>Perro</item>
+        <item>Gato</item>
+        <item>Ave</item>
+        <item>Conejo</item>
+        <item>Hamster</item>
+        <item>Otro</item>
+    </string-array>
 
 </resources>

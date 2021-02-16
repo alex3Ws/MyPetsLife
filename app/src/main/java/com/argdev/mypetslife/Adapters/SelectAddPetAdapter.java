@@ -1,5 +1,6 @@
 package com.argdev.mypetslife.Adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.argdev.mypetslife.Activities.CreatePetActivity;
+import com.argdev.mypetslife.Activities.LoginActivity;
+import com.argdev.mypetslife.Activities.SelectOrAddPetActivity;
 import com.argdev.mypetslife.Entities.Mascotas;
 import com.argdev.mypetslife.R;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -52,6 +56,14 @@ public class SelectAddPetAdapter extends RecyclerView.Adapter<SelectAddPetAdapte
             holder.cardViewMascotasAdd.setVisibility(View.VISIBLE);
         }
 
+
+        holder.addMascota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent createPet = new Intent(v.getContext(), CreatePetActivity.class);
+                v.getContext().startActivity(createPet);
+            }
+        });
 
 
     }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.CreatePetActivity"
+    android:background="@drawable/gradient_background_login">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4_izq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4_dcha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+    <ImageView
+        android:id="@+id/pet_image_create"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4_dcha"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="@+id/guideline4_izq"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icono_add_pet" />
+
+
+    <EditText
+        android:id="@+id/etPetName"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/et_background"
+        android:hint="@string/Name"
+        android:inputType="text"
+        android:padding="16dp"
+        android:textColorHint="@color/login_form_details"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4_dcha"
+        app:layout_constraintStart_toStartOf="@+id/guideline4_izq"
+        app:layout_constraintTop_toBottomOf="@+id/pet_image_create" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:hint="Seleccionar especie"
+
+        app:boxStrokeColor="@color/login_form_details_light"
+        android:textColorHint="@color/login_form_details"
+        app:hintTextColor="@color/login_form_details"
+        app:boxStrokeWidth="1dp"
+        app:endIconTint="@color/login_form_details"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4_dcha"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline4_izq"
+        app:layout_constraintTop_toBottomOf="@+id/etPetName">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewPet"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:textColor="@color/login_form_details"
+            android:inputType="none"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
