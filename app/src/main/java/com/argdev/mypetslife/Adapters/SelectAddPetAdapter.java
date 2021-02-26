@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.argdev.mypetslife.Activities.CreatePetActivity;
 import com.argdev.mypetslife.Activities.LoginActivity;
 import com.argdev.mypetslife.Activities.SelectOrAddPetActivity;
+import com.argdev.mypetslife.Activities.SelectPetSpecies;
 import com.argdev.mypetslife.Entities.Mascotas;
 import com.argdev.mypetslife.R;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -60,7 +61,11 @@ public class SelectAddPetAdapter extends RecyclerView.Adapter<SelectAddPetAdapte
         holder.addMascota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent createPet = new Intent(v.getContext(), CreatePetActivity.class);
+
+                /*Intent createPet = new Intent(v.getContext(), CreatePetActivity.class);
+                v.getContext().startActivity(createPet);*/
+
+                Intent createPet = new Intent(v.getContext(), SelectPetSpecies.class);
                 v.getContext().startActivity(createPet);
             }
         });

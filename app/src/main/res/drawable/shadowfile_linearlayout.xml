@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- every item add a layer of evaluation to the border, with the padding you define how the evaluation is located around the border-->
+    <item>
+        <shape>
+            <padding android:top="1dp" android:right="1dp" android:bottom="1dp" android:left="1dp" />
+            <solid android:color="#03000000" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>    <item>
+    <shape>
+        <padding android:top="1dp" android:right="1dp" android:bottom="1dp" android:left="1dp" />
+        <solid android:color="#03000000" />
+        <corners android:radius="20dp" />
+    </shape>
+</item>    <item>
+    <shape>
+        <padding android:top="1dp" android:right="1dp" android:bottom="1dp" android:left="1dp" />
+        <solid android:color="#03000000" />
+        <corners android:radius="20dp" />
+    </shape>
+</item>
+    <item>
+        <shape>
+            <padding android:top="1dp" android:right="1dp" android:bottom="1dp" android:left="1dp" />
+            <solid android:color="#03000000" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding android:top="1dp" android:right="1dp" android:bottom="1dp" android:left="1dp" />
+            <solid android:color="#03000000" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding android:top="1dp" android:right="1dp" android:bottom="1dp" android:left="1dp" />
+            <solid android:color="#03000000" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding android:top="1dp" android:right="1dp" android:bottom="1dp" android:left="1dp" />
+            <solid android:color="#03000000" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+    <!-- Background -->
+    <item>
+        <shape>
+            <solid android:color="#88FFFFFF" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+</layer-list>
