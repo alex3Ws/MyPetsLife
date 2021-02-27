@@ -13,6 +13,7 @@ import com.argdev.mypetslife.Adapters.RegisterPetGenericAdapter;
 import com.argdev.mypetslife.Adapters.SelectAddPetAdapter;
 import com.argdev.mypetslife.Entities.InfoMascotas;
 import com.argdev.mypetslife.Entities.Mascotas;
+import com.argdev.mypetslife.Entities.User;
 import com.argdev.mypetslife.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,17 +26,20 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SelectPetSpecies extends AppCompatActivity {
+public class SelectPetSpeciesActivity extends AppCompatActivity {
 
     private FirebaseFirestore db;
     private List<InfoMascotas> speciesList;
     public RecyclerView recyclerSpecies;
+    private User user;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_pet_species);
+
+        user = (User)getIntent().getSerializableExtra("UserObject");
 
         recyclerSpecies = findViewById(R.id.rvPetSpecies);
         recyclerSpecies.setLayoutManager(new GridLayoutManager(this, 2));
@@ -61,7 +65,7 @@ public class SelectPetSpecies extends AppCompatActivity {
                     }
 
                     Collections.sort(speciesList);
-                    RegisterPetGenericAdapter adapter = new RegisterPetGenericAdapter(speciesList,"ESP");
+                    RegisterPetGenericAdapter adapter = new RegisterPetGenericAdapter(speciesList,"ESP", user);
                     recyclerSpecies.setAdapter(adapter);
 
                 }

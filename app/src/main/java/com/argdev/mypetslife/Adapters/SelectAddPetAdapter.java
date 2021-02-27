@@ -10,11 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.argdev.mypetslife.Activities.CreatePetActivity;
-import com.argdev.mypetslife.Activities.LoginActivity;
-import com.argdev.mypetslife.Activities.SelectOrAddPetActivity;
-import com.argdev.mypetslife.Activities.SelectPetSpecies;
+import com.argdev.mypetslife.Activities.SelectPetSpeciesActivity;
 import com.argdev.mypetslife.Entities.Mascotas;
+import com.argdev.mypetslife.Entities.User;
 import com.argdev.mypetslife.R;
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
@@ -27,11 +25,12 @@ public class SelectAddPetAdapter extends RecyclerView.Adapter<SelectAddPetAdapte
 
 
     List<Mascotas> mascotas;
+    User user;
 
 
-    public SelectAddPetAdapter(List<Mascotas> mascotas) {
+    public SelectAddPetAdapter(List<Mascotas> mascotas, User user) {
         this.mascotas = mascotas;
-
+        this.user = user;
     }
 
     @NonNull
@@ -65,7 +64,8 @@ public class SelectAddPetAdapter extends RecyclerView.Adapter<SelectAddPetAdapte
                 /*Intent createPet = new Intent(v.getContext(), CreatePetActivity.class);
                 v.getContext().startActivity(createPet);*/
 
-                Intent createPet = new Intent(v.getContext(), SelectPetSpecies.class);
+                Intent createPet = new Intent(v.getContext(), SelectPetSpeciesActivity.class);
+                createPet.putExtra("UserObject",user);
                 v.getContext().startActivity(createPet);
             }
         });

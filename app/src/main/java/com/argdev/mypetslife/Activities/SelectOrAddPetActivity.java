@@ -27,7 +27,7 @@ public class SelectOrAddPetActivity extends AppCompatActivity {
         recyclerMascotas = findViewById(R.id.rvPets);
         recyclerMascotas.setLayoutManager(new LinearLayoutManager(this));
 
-        SelectAddPetAdapter adapter = new SelectAddPetAdapter(user.getMascotas());
+        SelectAddPetAdapter adapter = new SelectAddPetAdapter(user.getMascotas(),user);
         recyclerMascotas.setAdapter(adapter);
 
 
