@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.CreatePetActivity"
+    tools:context=".Activities.InsertPetInfoActivity"
     android:background="@drawable/gradient_background_login">
 
 
@@ -22,60 +22,66 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="24dp" />
 
-    <ImageView
-        android:id="@+id/pet_image_create"
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4_dcha"
-        app:layout_constraintHorizontal_bias="0.009"
-        app:layout_constraintStart_toStartOf="@+id/guideline4_izq"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icono_add_pet" />
+
+    <TextView
+        android:id="@+id/tvPetData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="228dp"
+        android:text="Introduzca lo datos"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
         android:id="@+id/etPetName"
-
+        android:layout_marginTop="60dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
         android:background="@drawable/et_background"
         android:hint="@string/Name"
+        android:textColor="@color/white"
         android:inputType="text"
         android:padding="16dp"
         android:textColorHint="@color/login_form_details"
         app:layout_constraintEnd_toStartOf="@+id/guideline4_dcha"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline4_izq"
-        app:layout_constraintTop_toBottomOf="@+id/pet_image_create" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPetData" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/etPetBirthDate"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-
-        android:hint="Seleccionar especie"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/et_background"
+        android:drawableRight="@drawable/ic_calendar"
+        android:hint="dd/mm/aaaa"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:focusable="false"
+        android:padding="16dp"
         android:textColorHint="@color/login_form_details"
-        app:boxStrokeColor="@color/login_form_details_light"
-        app:boxStrokeWidth="1dp"
-        app:endIconTint="@color/login_form_details"
-        app:hintTextColor="@color/login_form_details"
         app:layout_constraintEnd_toStartOf="@+id/guideline4_dcha"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline4_izq"
-        app:layout_constraintTop_toBottomOf="@+id/etPetName">
+        app:layout_constraintTop_toBottomOf="@+id/etPetName" />
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextViewPet"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:enabled="true"
-            android:inputType="none"
-            android:textColor="@color/login_form_details" />
+    <ImageButton
+        android:id="@+id/btn_next"
+        android:layout_width="158dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="104dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4_dcha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPetBirthDate"
+        app:srcCompat="@drawable/ic_next_arrow"
+        android:background="@drawable/btn_background_next"
+        android:visibility="invisible"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
 
 
 

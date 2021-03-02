@@ -5,11 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.argdev.mypetslife.Activities.InsertPetInfoActivity;
 import com.argdev.mypetslife.Activities.SelectBreedActivity;
 import com.argdev.mypetslife.Activities.SelectPetSpeciesActivity;
 import com.argdev.mypetslife.Entities.InfoMascotas;
@@ -27,12 +29,22 @@ public class RegisterPetGenericAdapter extends RecyclerView.Adapter<RegisterPetG
     List<InfoMascotas> infoMascotasList;
     String identifier;  //Valores ESP, o BREED
     User user;
+    Mascotas mascota;
 
     public RegisterPetGenericAdapter(List<InfoMascotas> infoMascotasList, String identifier, User user) {
 
         this.infoMascotasList = infoMascotasList;
         this.identifier = identifier;
         this.user = user;
+
+    }
+
+    public RegisterPetGenericAdapter(List<InfoMascotas> infoMascotasList, String identifier, User user,Mascotas mascota) {
+
+        this.infoMascotasList = infoMascotasList;
+        this.identifier = identifier;
+        this.user = user;
+        this.mascota = mascota;
 
     }
 
@@ -90,9 +102,21 @@ public class RegisterPetGenericAdapter extends RecyclerView.Adapter<RegisterPetG
 
             holder.breedName.setText(infoMascotasList.get(position).getSpeciesBreed());
 
+            holder.breedImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mascota.setRaza(infoMascotasList.get(position).getSpeciesBreed());
+
+                    Intent insertPetInfo = new Intent(v.getContext(), InsertPetInfoActivity.class);
+                    insertPetInfo.putExtra("UserObject",user);
+                    insertPetInfo.putExtra("MascotaObject",mascota);
+                    v.getContext().startActivity(insertPetInfo);
+
+                }
+            });
+
+
         }
-
-
 
 
     }

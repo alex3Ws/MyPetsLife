@@ -13,10 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPetsLife">
-        <activity android:name=".Activities.SelectBreedActivity"></activity>
+        <activity
+            android:name=".Activities.SelectWeightActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity android:name=".Activities.SelectBreedActivity" />
         <activity android:name=".Activities.SelectPetSpeciesActivity" />
         <activity
-            android:name=".Activities.CreatePetActivity"
+            android:name=".Activities.InsertPetInfoActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".Activities.SelectOrAddPetActivity"

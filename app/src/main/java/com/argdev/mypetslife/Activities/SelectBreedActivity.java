@@ -65,7 +65,7 @@ public class SelectBreedActivity extends AppCompatActivity {
                     }
 
                     Collections.sort(breedList);
-                    RegisterPetGenericAdapter adapter = new RegisterPetGenericAdapter(breedList,"BREED", user);
+                    RegisterPetGenericAdapter adapter = new RegisterPetGenericAdapter(breedList,"BREED", user,addMascota);
                     recyclerBreed.setAdapter(adapter);
 
                 }
