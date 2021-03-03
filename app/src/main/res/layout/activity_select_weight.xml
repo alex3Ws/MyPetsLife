@@ -7,4 +7,66 @@
     tools:context=".Activities.SelectWeightActivity"
     android:background="@drawable/gradient_background_login">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="¿Cuanto pesa tu mascota?"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <NumberPicker
+            android:id="@+id/npKilos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Picker" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text=","
+            android:textColor="@color/white"
+            android:textSize="50dp" />
+
+        <NumberPicker
+            android:id="@+id/npGramos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Picker" />
+
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/btn_next2"
+        android:layout_width="160dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="105dp"
+        android:background="@drawable/btn_background_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/ic_next_arrow" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

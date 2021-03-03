@@ -46,10 +46,13 @@ public class InsertPetInfoActivity extends AppCompatActivity {
         petName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                if(!petBirthDay.getText().toString().equals("")){
+                if(!petBirthDay.getText().toString().equals("") && petName.getText().toString().equals("")){
 
                     btn_Next.setVisibility(View.VISIBLE);
 
+                }
+                else{
+                    btn_Next.setVisibility(View.INVISIBLE);
                 }
             }
 
@@ -109,9 +112,7 @@ public class InsertPetInfoActivity extends AppCompatActivity {
 
                 addMascota.setNombreMascota(petName.getText().toString());
                 addMascota.setFechaNacimiento(petBirthDay.getText().toString());
-
-                //Intent selectWeight = new Intent(this,);
-
+                
                 Intent selectWeight = new Intent(v.getContext(), SelectWeightActivity.class);
                 selectWeight.putExtra("UserObject",user);
                 selectWeight.putExtra("MascotaObject",addMascota);

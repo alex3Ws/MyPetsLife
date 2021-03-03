@@ -15,6 +15,7 @@ public class Mascotas  implements Serializable {
     private String Subraza2;
     private String FechaNacimiento;
     private String UrlFoto;
+    private Double Peso;
 
     public Mascotas(){
 
@@ -86,4 +87,26 @@ public class Mascotas  implements Serializable {
         UrlFoto = urlFoto;
     }
 
+    public Double getPeso() {
+        return Peso;
+    }
+
+    public void setPeso(Double peso) {
+        Peso = peso;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Mascotas{" +
+                "NombreMascota='" + NombreMascota + '\'' +
+                ", Especie='" + Especie + '\'' +
+                ", Raza='" + Raza + '\'' +
+                ", Subraza1='" + Subraza1 + '\'' +
+                ", Subraza2='" + Subraza2 + '\'' +
+                ", FechaNacimiento='" + FechaNacimiento + '\'' +
+                ", UrlFoto='" + UrlFoto + '\'' +
+                ", Peso=" + Peso +
+                '}';
+    }
 }
