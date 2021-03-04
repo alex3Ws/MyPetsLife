@@ -7,17 +7,19 @@ import java.util.List;
 
 public class User implements Serializable {
 
+    private String email;
     private String IDUser;
     //Mascota: 1-Si tiene mascota 0-Si no
     private Boolean Mascota;
     //Mascotas - Informacion de cada una de las mascotas
-    private List<Mascotas> Mascotas;
+    private List<Mascotas> Mascotas = new ArrayList<>();
 
     public User() {
 
     }
 
-    public User(String IDUser, Boolean Mascota, List<Mascotas> Mascotas) {
+    public User(String email,String IDUser, Boolean Mascota, List<Mascotas> Mascotas) {
+        this.email = email;
         this.IDUser = IDUser;
         this.Mascota = Mascota;
         this.Mascotas = Mascotas;
@@ -52,6 +54,32 @@ public class User implements Serializable {
     public void setMascotas(List<Mascotas> Mascotas) {
 
         this.Mascotas = Mascotas;
+    }
+
+    public Integer  getSize(){
+
+        return Mascotas.size();
+
+    }
+
+    public void  removeMascota(int position){
+
+        this.Mascotas.remove(position);
+
+    }
+
+    public void  addMascotas(Mascotas mascota){
+
+        this.Mascotas.add(mascota);
+
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String toStringF(){

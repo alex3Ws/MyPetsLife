@@ -148,17 +148,24 @@ public class LoginActivity extends AppCompatActivity {
 
     private void getUserData(View view){
 
-        db.collection("Users").document("one")
+        db.collection("Users").document(email)
                 .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
 
                     DocumentSnapshot document = task.getResult();
+                    user.setEmail(document.getId());
                     user.setIDUser(document.getString("IDUser"));
                     user.setMascota(document.getBoolean("Mascota"));
 
-                    getMascotasData(view);
+                    if(user.getMascota().equals(true)){
+                        getMascotasData(view);
+                    }
+                    else{
+                        intentOnSucces(view);
+                    }
+
                 }
             }
         });
@@ -167,7 +174,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void getMascotasData(View view){
 
-        db.collection("Users").document("one").collection("Mascotas")
+        db.collection("Users").document(email).collection("Mascotas")
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -175,6 +182,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
 
                     List<Mascotas> listaMascotas = new ArrayList<Mascotas>();
+
                     for (QueryDocumentSnapshot document : task.getResult()) {
 
                         mascota = document.toObject(Mascotas.class);

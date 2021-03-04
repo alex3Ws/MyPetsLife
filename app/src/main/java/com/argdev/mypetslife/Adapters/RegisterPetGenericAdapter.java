@@ -106,6 +106,7 @@ public class RegisterPetGenericAdapter extends RecyclerView.Adapter<RegisterPetG
                 @Override
                 public void onClick(View v) {
                     mascota.setRaza(infoMascotasList.get(position).getSpeciesBreed());
+                    mascota.setUrlFoto(infoMascotasList.get(position).getSpeciesBreedUrl());
 
                     Intent insertPetInfo = new Intent(v.getContext(), InsertPetInfoActivity.class);
                     insertPetInfo.putExtra("UserObject",user);

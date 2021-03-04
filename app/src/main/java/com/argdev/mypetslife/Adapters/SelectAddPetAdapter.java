@@ -17,6 +17,7 @@ import com.argdev.mypetslife.R;
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,12 +25,16 @@ import java.util.List;
 public class SelectAddPetAdapter extends RecyclerView.Adapter<SelectAddPetAdapter.ViewHolderPets> {
 
 
-    List<Mascotas> mascotas;
+    List<Mascotas> mascotas = new ArrayList<>();
+    int mascotasSize;
+    Boolean flagMascotas = false;
     User user;
 
 
     public SelectAddPetAdapter(List<Mascotas> mascotas, User user) {
+        this.mascotas.clear();
         this.mascotas = mascotas;
+        this.mascotasSize = mascotas.size();
         this.user = user;
     }
 
@@ -46,24 +51,35 @@ public class SelectAddPetAdapter extends RecyclerView.Adapter<SelectAddPetAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolderPets holder, int position) {
 
-        if(position != 2){
+        if(position <= mascotasSize && mascotasSize == mascotas.size()){
+
+            if (position == mascotas.size() - 1 && !flagMascotas && mascotasSize < 3){
+                mascotas.add(new Mascotas());
+                flagMascotas = true;
+            }
+
+
             Picasso.get().load(mascotas.get(position).getUrlFoto())
                     .resize(175,175).into(holder.mascota);
-        }
-        else{
 
-            holder.cardViewMascotas.setVisibility(View.GONE);
-            holder.cardViewMascotasAdd.setVisibility(View.VISIBLE);
+
         }
+        else
+        {
+
+            if(mascotasSize < 3){
+                holder.cardViewMascotas.setVisibility(View.GONE);
+                holder.cardViewMascotasAdd.setVisibility(View.VISIBLE);
+            }
+
+        }
+
 
 
         holder.addMascota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                /*Intent createPet = new Intent(v.getContext(), CreatePetActivity.class);
-                v.getContext().startActivity(createPet);*/
-
+                
                 Intent createPet = new Intent(v.getContext(), SelectPetSpeciesActivity.class);
                 createPet.putExtra("UserObject",user);
                 v.getContext().startActivity(createPet);

@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.argdev.mypetslife.Adapters.SelectAddPetAdapter;
@@ -15,7 +18,9 @@ import com.argdev.mypetslife.R;
 public class SelectOrAddPetActivity extends AppCompatActivity {
 
     private User user;
-    public RecyclerView recyclerMascotas;
+    RecyclerView recyclerMascotas;
+    ImageView addPet;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +30,38 @@ public class SelectOrAddPetActivity extends AppCompatActivity {
         user = (User)getIntent().getSerializableExtra("UserObject");
 
         recyclerMascotas = findViewById(R.id.rvPets);
-        recyclerMascotas.setLayoutManager(new LinearLayoutManager(this));
+        addPet = findViewById(R.id.ivAddPet);
 
-        SelectAddPetAdapter adapter = new SelectAddPetAdapter(user.getMascotas(),user);
-        recyclerMascotas.setAdapter(adapter);
+        addPet.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent createPet = new Intent(v.getContext(), SelectPetSpeciesActivity.class);
+                createPet.putExtra("UserObject",user);
+                v.getContext().startActivity(createPet);
+            }
+
+        });
+
+
+        if(user.getMascotas().size() != 0){
+
+            addPet.setVisibility(View.GONE);
+
+
+            recyclerMascotas.setVisibility(View.VISIBLE);
+            recyclerMascotas.setLayoutManager(new LinearLayoutManager(this));
+
+
+
+            SelectAddPetAdapter adapter = new SelectAddPetAdapter(user.getMascotas(),user);
+            recyclerMascotas.setAdapter(adapter);
+
+        }
+        else{
+
+
+        }
 
 
 

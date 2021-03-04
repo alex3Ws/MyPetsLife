@@ -120,7 +120,7 @@ public class SelectWeightActivity extends AppCompatActivity {
         int gramos = Integer.parseInt(numbersGramos[positionGramos]);
 
         Double peso = kilos + ((double)gramos/(double)10);
-        Toast.makeText(getApplicationContext(),"Peso: "+peso, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"Peso: "+peso, Toast.LENGTH_SHORT).show();
         return peso;
     }
 }

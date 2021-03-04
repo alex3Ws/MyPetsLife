@@ -9,14 +9,92 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvselectPicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="20dp"
+        android:layout_marginTop="112dp"
+        android:text="Seleccione una imagen"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvselectPicture2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="de su mascota"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvselectPicture" />
+
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/pet_image_2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="80dp"
+        app:civ_border_color="#ffffff"
+        app:civ_border_width="3dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="#3f51b5"
+        app:civ_shadow_radius="5dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvselectPicture2"
+        app:srcCompat="@drawable/icono_add_pet" />
+
+
+    <ImageButton
+        android:id="@+id/btn_nextFoto"
+        android:layout_width="160dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/btn_background_next"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pet_image_2"
+        app:srcCompat="@drawable/ic_next_arrow" />
+
+    <ImageView
+        android:id="@+id/pet_image_add2"
+        android:layout_width="185dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvselectPicture2"
+        app:srcCompat="@drawable/icono_add_pet" />
+
+
+    <Button
+        android:id="@+id/btn_OmitirFoto"
+        android:layout_width="160dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/btn_background_login"
+        android:text="Omitir"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pet_image_add2" />
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
