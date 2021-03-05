@@ -240,7 +240,10 @@ public class AddPetPhotoActivity extends AppCompatActivity {
 
         Intent selectPet = new Intent(view.getContext(), SelectOrAddPetActivity.class);
 
-        user.removeMascota(user.getSize() - 1);
+        if(user.getMascotas().size() != 0){
+            user.removeMascota(user.getSize() - 1);
+        }
+
         user.addMascotas(addMascota);
 
         selectPet.putExtra("UserObject",user);
