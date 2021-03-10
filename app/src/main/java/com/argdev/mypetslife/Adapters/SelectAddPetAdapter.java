@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.argdev.mypetslife.Activities.PetInfoActivity;
 import com.argdev.mypetslife.Activities.SelectPetSpeciesActivity;
 import com.argdev.mypetslife.Entities.Mascotas;
 import com.argdev.mypetslife.Entities.User;
@@ -51,8 +52,11 @@ public class SelectAddPetAdapter extends RecyclerView.Adapter<SelectAddPetAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolderPets holder, int position) {
 
+
+        //Si la posicion actual, no es el objeto vacío añadido para mostrar el icono de añadir
         if(position <= mascotasSize && mascotasSize == mascotas.size()){
 
+            // Si es la ultima posicion del arraylist, y no ha entrado antes (flagMascotas), y mientras el arraylist tenga menos de 3 objetos
             if (position == mascotas.size() - 1 && !flagMascotas && mascotasSize < 3){
                 mascotas.add(new Mascotas());
                 flagMascotas = true;
@@ -62,11 +66,20 @@ public class SelectAddPetAdapter extends RecyclerView.Adapter<SelectAddPetAdapte
             Picasso.get().load(mascotas.get(position).getUrlFoto())
                     .resize(175,175).into(holder.mascota);
 
+            holder.mascota.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent petInfo = new Intent(v.getContext(), PetInfoActivity.class);
+                    petInfo.putExtra("UserObject",user);
+                    v.getContext().startActivity(petInfo);
+                }
+            });
+
 
         }
         else
         {
-
+            //El maximo que se permite añadir son 3 Mascotas, asique si hay 2 o menos añadidas, aparecera el icono de añadir Mascota
             if(mascotasSize < 3){
                 holder.cardViewMascotas.setVisibility(View.GONE);
                 holder.cardViewMascotasAdd.setVisibility(View.VISIBLE);
