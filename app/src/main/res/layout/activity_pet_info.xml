@@ -8,41 +8,66 @@
     tools:context=".Activities.PetInfoActivity">
 
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:background="@drawable/gradient_background_login">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsingToolbar"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-            app:title="MyPetsLife"
-            android:background="@drawable/gradient_background_login">
+            android:orientation="vertical"
+            android:gravity="center"
+            >
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/Toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"/>
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/pet_image"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                app:srcCompat="@drawable/icono_add_pet"
+                app:civ_border_color="#ffffff"
+                app:civ_border_width="3dp"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="5dp"
+                app:civ_shadow_color="#3f51b5"
+                android:layout_marginBottom="-10dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Sparky"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:gravity="center"/>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
 
 
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </LinearLayout>
 
 
+
+
+
+        </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        />
+
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
@@ -65,14 +90,204 @@
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
+
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/addReminder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_add_24"
         app:layout_anchor="@+id/bottomAppBar"
-        app:layout_anchorGravity="top|center" />
+        app:layout_anchorGravity="top|center"
+        />
+
+    <GridLayout
+        android:id="@+id/gl_addReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        >
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/shadowfile_linearlayout"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.269"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.301">
+
+            <ImageView
+                android:id="@+id/ivSpecies"
+                android:src="@drawable/veterinario"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.256"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+            <TextView
+                android:id="@+id/tvSpecies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Citas"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/shadowfile_linearlayout"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.448"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.303">
+
+
+            <ImageView
+                android:id="@+id/ivSpecies2"
+                android:src="@drawable/garrapatas"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.762"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                 />
+
+            <TextView
+                android:id="@+id/tvSpecies2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Antiparasitos"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/shadowfile_linearlayout"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.273"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.165">
+
+
+            <ImageView
+                android:id="@+id/ivSpecies3"
+                android:src="@drawable/alimento"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.762"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tvSpecies3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Alimentación"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/shadowfile_linearlayout"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="0.167">
+
+
+            <ImageView
+                android:id="@+id/ivSpecies4"
+                android:src="@drawable/salud"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.762"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tvSpecies4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Cuidados"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        </LinearLayout>
+
+    </GridLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
